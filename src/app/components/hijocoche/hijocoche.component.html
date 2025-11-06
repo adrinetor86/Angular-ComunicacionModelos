@@ -1,0 +1,17 @@
+
+    <div class="card h-100 shadow-sm border-1 rounded-3 overflow-hidden hover-card">
+
+    <h1 class="text-primary">{{ car.marca }} {{ car.modelo }} </h1>
+    <h2 [ngClass]="{
+    verde:car.estado==true,
+    rojo:car.estado==false}">
+      {{ mensaje }}
+    </h2>
+    <h2>Velocidad actual {{ car.velocidad }}Km/h</h2>
+    <button [ngClass]="{ rojo:car.estado, verde:!car.estado}"
+            (click)="encenderCoche()"
+            class="btn ">
+      Start/Stop
+    </button>
+    <button class="btn btn-info" (click)="acelerarCoche()">Acelerar</button>
+  </div>

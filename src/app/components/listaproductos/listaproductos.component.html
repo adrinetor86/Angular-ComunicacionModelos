@@ -1,0 +1,21 @@
+<div class="container-fluid py-5">
+  <div class="row g-4">
+    @for (prod of productos; track prod) {
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="card h-100 shadow-sm border-1 rounded-3 overflow-hidden hover-card">
+          <div class="position-relative">
+            <img class="card-img-top" [src]="prod.imagen" alt=""
+                 style="height: 250px; object-fit: cover;"/>
+            <div class="position-absolute top-0 end-0 m-3">
+              <span class="badge bg-success fs-6">{{prod.precio | currency}}</span>
+            </div>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-truncate">{{prod.nombre}}</h5>
+            <button class="btn btn-primary w-100 mt-3">Ver detalles</button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

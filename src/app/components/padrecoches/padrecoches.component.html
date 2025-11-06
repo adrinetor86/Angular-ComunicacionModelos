@@ -1,0 +1,17 @@
+<div class="container-fluid py-5 bg-dark min-vh-100">
+
+  <h2 class="text-danger">Padre Coches</h2>
+
+  <div class="row g-4">
+    @for (coche of cochesArray; track coche) {
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-6">
+        <div class="card h-100 shadow-sm border-1 rounded-3 overflow-hidden hover-card">
+          <div class="position-relative">
+            <app-hijocoche [car]="coche"/>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
