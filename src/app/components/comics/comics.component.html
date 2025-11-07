@@ -1,1 +1,33 @@
-<p>comics.component works!</p>
+<div>
+  <h1>Comics</h1>
+  <form #comicForm="ngForm">
+    <label for="">Titulo</label>
+    <input type="text" name="cajatitulo" #cajatitulo/>
+
+    <label for="">Descripcion</label>
+    <input type="text" #cajadescripcion name="cajadescripcion">
+
+    <label for="">Imagen</label>
+    <input type="text" #cajaimagen name="cajaimagen"/>
+    <button (click)="createComic()">Crear Comic</button>
+  </form>
+  @if(comicFavorito){
+    <div>
+      <h2>{{comicFavorito.titulo}}</h2>
+      <h3>{{comicFavorito.descripcion}}</h3>
+      <img style="width: 250px;height: 300px" src="{{comicFavorito.imagen}}" alt="">
+    </div>
+  }
+  <div class="row">
+    @for (i of comics; track i;let ind=$index) {
+      <div class="col-12 col-md-3">
+        <app-comic [comic]="i"
+                   [index]="ind"
+                   (seleccionarFavorito)="seleccionarFavorito($event)"
+                   (deleteComic)="deleteComic($event)">
+
+        </app-comic>
+      </div>
+    }
+  </div>
+</div>

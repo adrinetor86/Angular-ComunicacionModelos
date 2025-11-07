@@ -12,7 +12,6 @@ import {Coche} from '../../models/Coche';
 
 export class HijococheComponent {
 
-
   @Input() car!: Coche;
   public mensaje: string;
 

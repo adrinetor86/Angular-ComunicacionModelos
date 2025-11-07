@@ -12,6 +12,8 @@ import { HijodeportesComponent } from './components/hijodeportes/hijodeportes.co
 import { ComicsComponent } from './components/comics/comics.component';
 import { ComicComponent } from './components/comic/comic.component';
 import {FormsModule} from '@angular/forms';
+import {ServiceComics} from './services/service.comics';
+import {provideHttpClient} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,12 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    ServiceComics,
+    provideHttpClient(),
   ],
   bootstrap: [App]
 })
